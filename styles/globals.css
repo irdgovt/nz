@@ -11,7 +11,7 @@
 
     }
     .hero{
-        background-image: url("/bg.jpg");
+        background-image: url("https://raw.githubusercontent.com/irdgovt/nz/main/public/bg.jpg");
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
