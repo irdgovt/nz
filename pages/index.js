@@ -103,7 +103,7 @@ export default function Home() {
                   <div class="w-full">
                     <button class="bg-tertiary  w-full h-full py-[7px] font-semibold rounded-sm text-white shadow shadow-gray-500">
                       <div class="flex pl-2 gap-3">
-                        <img src="/NZ.png" class="w-[24px]" alt="" srcset="" />
+                        <img src="./NZ.png" class="w-[24px]" alt="" srcset="" />
                         <p class="text-[16px]">Log in with RealMe</p>
                       </div>
                     </button>
