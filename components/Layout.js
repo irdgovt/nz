@@ -1,4 +1,6 @@
 import React from "react";
+import Section from "./Section";
+import Footer from "./Footer";
 
 const Layout = ({ children }) => {
   return (
@@ -7,7 +9,7 @@ const Layout = ({ children }) => {
         <div className="w-full h-full">
           <div className="bg-[#0d8390] w-full h-[.65rem]"></div>
           <div className="bg-primary w-full">
-            <div className=" flex justify-between items-center w-full py-2 px-20 ">
+            <div className=" flex justify-between items-center w-full py-2 lg:px-20 md:px-10 px-7">
               <div className="">
                 <img src="./logo.svg" className="h-[3rem]" alt="" srcset="" />
               </div>
@@ -23,6 +25,8 @@ const Layout = ({ children }) => {
         </div>
       </div>
       <div>{children}</div>
+      <Section />
+      <Footer />
     </div>
   );
 };

